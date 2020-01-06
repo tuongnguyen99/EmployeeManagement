@@ -43,12 +43,14 @@
 
     <EditText
         android:id="@+id/txtRegisPwd"
+        android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/enter_password"
         android:paddingBottom="20dp" />
     <EditText
         android:id="@+id/txtRegisRePwd"
+        android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/enter_pasword_again"

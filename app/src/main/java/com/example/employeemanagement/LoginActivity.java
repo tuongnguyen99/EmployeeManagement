@@ -15,6 +15,7 @@ import com.example.employeemanagement.model.User;
 import com.example.employeemanagement.retrofit.APIService;
 import com.example.employeemanagement.retrofit.APIUtils;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -57,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                         ArrayList data = response.body();
                         if (data.size() > 0){
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            intent.putExtra("CURRENT_USER", (Serializable) data.get(0));
                             startActivity(intent);
                         }else {
                             Toast.makeText(LoginActivity.this, "Wrong account or password!", Toast.LENGTH_SHORT).show();
@@ -69,6 +71,14 @@ public class LoginActivity extends AppCompatActivity {
 
                     }
                 });
+            }
+        });
+
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
             }
         });
     }

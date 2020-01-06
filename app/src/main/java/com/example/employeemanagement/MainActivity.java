@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -42,11 +43,13 @@ public class MainActivity extends AppCompatActivity {
     private EmployeeAdapter employeeAdapter;
 
     User userSeleted;
+    User currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        currentUser = (User) this.getIntent().getSerializableExtra("CURRENT_USER");
         apiService = APIUtils.getServer();
         initControls();
         addEvents();
@@ -138,6 +141,27 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onContextItemSelected(item);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        this.getMenuInflater().inflate(R.menu.menu_options, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int itemId = item.getItemId();
+        switch (itemId){
+            case R.id.menuUser:
+                Intent intent = new Intent(MainActivity.this, UserInfoActivity.class);
+                intent.putExtra("MY_INFO", currentUser);
+                startActivity(intent);
+                break;
+            case R.id.menuLogout:
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void delEmployee(final User userSeleted) {
