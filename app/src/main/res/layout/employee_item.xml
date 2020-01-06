@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="6dp">
+    <TextView
+        android:id="@+id/txtName"
+        android:text="Ho ten"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/txtPhone"
+        android:text="0909403483"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"/>
+    <TextView
+        android:id="@+id/txtPosition"
+        android:text="Giam doc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"/>
+    <TextView
+        android:id="@+id/txtDepartment"
+        android:text="giam doc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"/>
+
+
+</LinearLayout>

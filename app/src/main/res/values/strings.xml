@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">EmployeeManagement</string>
+    <string name="login">Login</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="register">Register</string>
+    <string name="exit">Exit</string>
+    <string name="search">Search</string>
+    <string name="call">Call</string>
+    <string name="send_message">Send message</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="update_info">Update Profile</string>
+    <string name="edit_newname">Enter new name</string>
+    <string name="edit_newphone">Enter new phone number</string>
+    <string name="edit_newposition">Eter new position</string>
+    <string name="edit_newdepartment">Enter new department</string>
+    <string name="update">Update</string>
+    <string name="enter_name">Enter . name</string>
+    <string name="enter_phone">Enter . phone</string>
+    <string name="enter_position">Enter . position</string>
+    <string name="enter_department">Enter . department</string>
+    <string name="enter_password">Enter . password</string>
+    <string name="enter_pasword_again">Enter . password again</string>
+    <string name="regis_success">Sign Up Success</string>
+    <string name="password_not_match">Password does not match!</string>
+    <string name="cancle">Cancle</string>
+</resources>
