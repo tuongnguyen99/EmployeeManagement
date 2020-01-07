@@ -5,22 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="6dp"
+    android:padding="12dp"
+    android:background="@drawable/custom"
     tools:context=".LoginActivity">
 
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/login"
-        android:textAllCaps="true"
-        android:textStyle="bold"
-        android:textSize="24sp"
-        android:gravity="center"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="60dp"/>
+        android:src="@drawable/user_"
+        android:layout_marginBottom="40dp"
+        android:paddingTop="40dp"/>
 
     <EditText
         android:id="@+id/txtUserName"
+        android:background="@drawable/custom_edittext"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint_username"
@@ -28,32 +29,39 @@
 
     <EditText
         android:id="@+id/txtPassword"
+        android:background="@drawable/custom_edittext"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:padding="10dp"
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint_password"/>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <Button
+        android:id="@+id/btnLogin"
+        android:background="@drawable/custom_button_login"
+        android:textColor="#fff"
+        android:padding="4dp"
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
+        android:text="@string/login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/login"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/btnRegister"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/register"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/btnRegister"
+        android:background="@drawable/custom_button_register"
+        android:textColor="#fff"
+        android:padding="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

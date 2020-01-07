@@ -3,6 +3,7 @@ package com.example.employeemanagement;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 import com.example.employeemanagement.model.User;
 import com.example.employeemanagement.retrofit.APIService;
 import com.example.employeemanagement.retrofit.APIUtils;
+import com.google.gson.Gson;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -59,6 +61,10 @@ public class LoginActivity extends AppCompatActivity {
                         if (data.size() > 0){
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             intent.putExtra("CURRENT_USER", (Serializable) data.get(0));
+                            SharedPreferences sharedPreferences = getSharedPreferences("login_data", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString("current_user", new Gson().toJson(data.get(0)));
+                            editor.commit();
                             startActivity(intent);
                         }else {
                             Toast.makeText(LoginActivity.this, "Wrong account or password!", Toast.LENGTH_SHORT).show();

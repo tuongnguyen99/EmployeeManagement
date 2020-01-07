@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -25,6 +26,7 @@ import com.example.employeemanagement.model.User;
 import com.example.employeemanagement.retrofit.APIClient;
 import com.example.employeemanagement.retrofit.APIService;
 import com.example.employeemanagement.retrofit.APIUtils;
+import com.google.gson.Gson;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -49,7 +51,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        currentUser = (User) this.getIntent().getSerializableExtra("CURRENT_USER");
+        //currentUser = (User) this.getIntent().getSerializableExtra("CURRENT_USER");
+        SharedPreferences sharedPreferences = getSharedPreferences("login_data", MODE_PRIVATE);
+        currentUser = new Gson().fromJson(sharedPreferences.getString("current_user", ""), User.class);
         apiService = APIUtils.getServer();
         initControls();
         addEvents();
